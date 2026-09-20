@@ -1,14 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-        <title>AnnDesign — Automatización, diseño web e infraestructura digital</title>
-        <meta name="description" content="AnnDesign: automatizacion con IA para WhatsApp e Instagram, landing pages e infraestructura digital, hechas a medida.">
-    </head>
-    <body>
-        <h1> Anna Design </h1>
-    </body>
-    <header></header>
-    <footer> </footer>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AnnDesign — Automatización, diseño web e infraestructura digital</title>
+<meta name="description" content="AnnDesign: automatización con IA para WhatsApp e Instagram, landing pages e infraestructura digital, hechas a medida.">
+<!-- Open Graph: controla cómo se ve el link cuando lo compartes en WhatsApp, Instagram bio o redes sociales -->
+<meta property="og:title" content="AnnDesign — Automatización, diseño web e infraestructura digital">
+<meta property="og:description" content="Servicios digitales hechos con la atención de una pieza a medida.">
+<meta property="og:type" content="website">
+<!-- Cuando tenga una imagen de portada, descomentare la línea de abajo -->
+<!-- <meta property="og:image" content="https://tudominio.com/portada.jpg"> -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; width:100%; position:relative;">
+    <div class="brand">Ann<span class="accent">Design</span></div>
+    <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Abrir menú">Menú</button>
+    <div class="links" id="navLinks">
+      <a href="#servicios" onclick="closeMenu()">Servicios</a>
+      <a href="#trabajos" onclick="closeMenu()">Trabajos</a>
+      <a href="#faq" onclick="closeMenu()">Preguntas</a>
+      <a href="#contacto" onclick="closeMenu()">Contacto</a>
+      <a href="#" id="theme-btn" onclick="toggleTheme(); return false;" style="border-bottom:1px solid var(--gold);">Modo oscuro</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <svg class="ornament" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M24 4 L24 44" stroke="currentColor" stroke-width="0.8"/>
+      <path d="M4 24 L44 24" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+      <circle cx="24" cy="24" r="9" stroke="currentColor" stroke-width="1"/>
+      <circle cx="24" cy="24" r="2" fill="currentColor"/>
+    </svg>
+    <!-- REEMPLAZA este titular por el tuyo si quieres -->
+    <h1>Automatización, diseño web e <em>infraestructura digital</em> con acabado de sastrería</h1>
+    <p class="sub">Ayudo a negocios a tener presencia digital, atención automatizada y sistemas propios, sin perder el cuidado de un trabajo hecho a medida.</p>
+    <a class="btn" href="#contacto">Conversemos sobre tu proyecto</a>
+  </div>
+</header>
+
+<section id="sobre-mi" class="tight">
+  <div class="wrap about">
+    <!--  presentación  -->
+    <p>Soy la persona detrás de AnnDesign. Trabajo directamente con cada cliente, de principio a fin, en un número reducido de proyectos a la vez.</p>
+    <p>No creo en soluciones genéricas. Cada landing, cada automatización y cada sistema que construyo parte de una conversación real sobre lo que tu negocio necesita, no de una plantilla que le funcionó a alguien más.</p>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="wrap">
+    <h2 class="section-title">Servicios</h2>
+    <p class="section-sub">Tres formas de ayudarte a que tu negocio funcione mejor, dentro y fuera de línea.</p>
+    <div class="services">
+      <div class="service-card">
+        <h3>Automatización con IA</h3>
+        <p>Atención y agenda para WhatsApp e Instagram que responde por ti, incluso fuera de horario.</p>
+        <a href="#contacto">Consultar →</a>
+      </div>
+      <div class="service-card">
+        <h3>Landing Pages</h3>
+        <p>Una página propia, clara y elegante, que convierte visitas en clientes reales.</p>
+        <a href="#contacto">Consultar →</a>
+      </div>
+      <div class="service-card">
+        <h3>Infraestructura Digital</h3>
+        <p>Sistemas a medida para gestionar clientes, pagos y datos con orden.</p>
+        <a href="#contacto">Consultar →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trabajos">
+  <div class="wrap">
+    <h2 class="section-title">Trabajos</h2>
+    <p class="section-sub">Una muestra de lo que hemos construido. Reemplaza estos espacios por tus propios proyectos.</p>
+    <div class="portfolio-grid">
+      <!-- Cada bloque .work es un proyecto. Duplica este bloque por cada trabajo que quieras mostrar. -->
+      <div class="work">
+        <div class="thumb">Imagen del proyecto</div>
+        <div class="caption">
+          <h4>Nombre del proyecto</h4>
+          <p>Breve descripción de qué hiciste y para quién.</p>
+        </div>
+      </div>
+      <div class="work">
+        <div class="thumb">Imagen del proyecto</div>
+        <div class="caption">
+          <h4>Nombre del proyecto</h4>
+          <p>Breve descripción de qué hiciste y para quién.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="tight">
+  <div class="wrap">
+    <h2 class="section-title">Preguntas frecuentes</h2>
+    <p class="section-sub">Lo que más preguntan antes de empezar. Edita o agrega las tuyas.</p>
+
+    <details class="faq-item" open>
+      <summary class="faq-q">¿Cuánto tiempo toma un proyecto? <span class="sign"></span></summary>
+      <p class="faq-a">Una landing sencilla puede estar lista en 1-2 semanas. Un sistema de automatización o infraestructura más completo toma entre 3 y 6 semanas, según el alcance.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">¿Qué necesito tener listo antes de empezar? <span class="sign"></span></summary>
+      <p class="faq-a">Idealmente tu logo, algunos textos o ideas de lo que quieres comunicar, y acceso a tus redes o WhatsApp Business si el proyecto los involucra. Si no tienes algo de esto, te ayudo a definirlo en la primera conversación.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">¿Ofreces mantenimiento después de la entrega? <span class="sign"></span></summary>
+      <p class="faq-a">Sí. Cada servicio incluye una mensualidad de acompañamiento que cubre soporte, ajustes y actualizaciones conforme tu negocio cambia.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">¿Puedo pagar en partes? <span class="sign"></span></summary>
+      <p class="faq-a">Sí, cada servicio tiene un plan de pago por etapas. Puedes ver el detalle en la página de tarifas.</p>
+    </details>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <h2 class="section-title">Conversemos</h2>
+    <p class="section-sub">Cuéntame qué necesitas. Respondo personalmente.</p>
+    <div class="contact-grid">
+      <div class="contact-direct">
+        <h3>Contacto directo</h3>
+        <div class="item">
+          <span>WhatsApp</span>
+          
+          <a href="https://wa.me/584120392105" target="_blank" rel="noopener">+58 412 0392105</a>
+        </div>
+        <div class="item">
+          <span>Correo</span>
+          <a href="annabellapaoli@gmail.com">annabellapaoli@gmail.com</a>
+        </div>
+      </div>
+
+      <!--
+        Este formulario usa Web3Forms, recuerda colocar la clave aqui
+      -->
+      <form class="contact-form" id="contactForm">
+        <input type="hidden" name="access_key" value="TU_ACCESS_KEY_AQUI">
+        <input type="hidden" name="subject" value="Nuevo mensaje desde AnnDesign">
+        <!-- Campo trampa anti-spam: invisible para personas, los bots suelen rellenarlo -->
+        <input type="text" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+        <div>
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div>
+          <label for="email">Correo</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="mensaje">Cuéntame sobre tu proyecto</label>
+          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        </div>
+        <button type="submit" id="contactSubmit">Enviar mensaje</button>
+        <p id="contactStatus" style="font-size:0.88rem; font-style:italic; margin:0; display:none;"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">AnnDesign</div>
+  <p>Automatización, diseño web e infraestructura digital.</p>
+</footer>
+
+<a class="wa-float" href="https://wa.me/584120392105" target="_blank" rel="noopener">Escríbeme por WhatsApp</a>
+
+<script src="script.js" defer></script>
+</body>
 </html>
