@@ -40,3 +40,30 @@ var contactForm = document.getElementById('contactForm');
       });
     });
   }
+
+  function toggleMenu(){
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  function closeMenu(){
+    document.getElementById('navLinks').classList.remove('open');
+  }
+
+  // Aparición suave de cada sección al entrar en pantalla
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduceMotion){
+    document.querySelectorAll('section').forEach(function(sec){
+      sec.style.opacity = '0';
+      sec.style.transform = 'translateY(14px)';
+      sec.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+    });
+    var revealObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('section').forEach(function(sec){ revealObserver.observe(sec); });
+  }
