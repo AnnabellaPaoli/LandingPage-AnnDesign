@@ -67,3 +67,20 @@ var contactForm = document.getElementById('contactForm');
     }, { threshold: 0.12 });
     document.querySelectorAll('section').forEach(function(sec){ revealObserver.observe(sec); });
   }
+  function toggleTheme(){
+    var current = document.documentElement.getAttribute('data-theme');
+    var next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    document.getElementById('theme-btn').textContent = next === 'dark' ? 'Modo claro' : 'Modo oscuro';
+    try{ localStorage.setItem('anndesign-theme', next); }catch(e){}
+  }
+  (function(){
+    try{
+      var saved = localStorage.getItem('anndesign-theme');
+      if(saved === 'dark'){
+        document.documentElement.setAttribute('data-theme', 'dark');
+        var btn = document.getElementById('theme-btn');
+        if(btn){ btn.textContent = 'Modo claro'; }
+      }
+    }catch(e){}
+  })();
