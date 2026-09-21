@@ -6,7 +6,7 @@ var contactForm = document.getElementById('contactForm');
       e.preventDefault();
       var accessKey = contactForm.access_key.value;
       contactStatus.style.display = 'block';
-      if(accessKey === 'TU_ACCESS_KEY_AQUI'){
+      if(accessKey === 'ACCESS_KEY'){
         contactStatus.textContent = 'Falta configurar la Access Key de Web3Forms para que este formulario funcione.';
         contactStatus.style.color = '#b5484c';
         return;
@@ -41,7 +41,7 @@ var contactForm = document.getElementById('contactForm');
     });
   }
 
-function toggleMenu(){
+  function toggleMenu(){
     document.getElementById('navLinks').classList.toggle('open');
   }
   function closeMenu(){
@@ -67,8 +67,7 @@ function toggleMenu(){
     }, { threshold: 0.12 });
     document.querySelectorAll('section').forEach(function(sec){ revealObserver.observe(sec); });
   }
-
-function toggleTheme(){
+  function toggleTheme(){
     var current = document.documentElement.getAttribute('data-theme');
     var next = current === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
