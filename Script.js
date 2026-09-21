@@ -41,7 +41,7 @@ var contactForm = document.getElementById('contactForm');
     });
   }
 
-  function toggleMenu(){
+function toggleMenu(){
     document.getElementById('navLinks').classList.toggle('open');
   }
   function closeMenu(){
@@ -67,7 +67,8 @@ var contactForm = document.getElementById('contactForm');
     }, { threshold: 0.12 });
     document.querySelectorAll('section').forEach(function(sec){ revealObserver.observe(sec); });
   }
-  function toggleTheme(){
+
+function toggleTheme(){
     var current = document.documentElement.getAttribute('data-theme');
     var next = current === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);

@@ -30,7 +30,7 @@
   * { box-sizing: border-box; }
   html{ scroll-padding-top: env(safe-area-inset-top, 0px); }
 
-body{
+  body{
     margin: 0;
     background: var(--ivory);
     color: var(--ink);
@@ -95,6 +95,7 @@ body{
       border-top: 1px solid var(--rose-line);
     }
   }
+
   /* HERO */
   header.hero{
     text-align: center;
