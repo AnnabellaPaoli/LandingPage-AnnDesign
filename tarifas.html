@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AnnDesign — Tarifas</title>
+<meta name="description" content="Tarifas de AnnDesign: automatización con IA, landing pages e infraestructura digital, con planes de pago y precios por región.">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<style>
+  :root{
+    --ivory: #FBF8F3;
+    --ivory-deep: #F3ECE0;
+    --ink: #1B1512;
+    --ink-soft: #55493d;
+    --gold: #B4903F;
+    --gold-deep: #8C6A2F;
+    --gold-bright: #D9B565;
+    --rose: #F1DBDF;
+    --rose-deep: #E7C3C9;
+    --rose-line: #E3BEC5;
+  }
+  :root:not([data-theme="light"]){
+    @media (prefers-color-scheme: dark){
+    }
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ivory: #17130F;
+      --ivory-deep: #1E1812;
+      --ink: #F3ECE0;
+      --ink-soft: #cbbfae;
+      --gold: #D2AE5F;
+      --gold-deep: #E4C275;
+      --gold-bright: #E9CC85;
+      --rose: #3A2A2D;
+      --rose-deep: #472F34;
+      --rose-line: #55393f;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ivory: #17130F;
+    --ivory-deep: #1E1812;
+    --ink: #F3ECE0;
+    --ink-soft: #cbbfae;
+    --gold: #D2AE5F;
+    --gold-deep: #E4C275;
+    --gold-bright: #E9CC85;
+    --rose: #3A2A2D;
+    --rose-deep: #472F34;
+    --rose-line: #55393f;
+  }
+
+  * { box-sizing: border-box; }
+
+  html{ scroll-padding-top: env(safe-area-inset-top, 0px); }
+
+  body{
+    margin: 0;
+    background: var(--ivory);
+    color: var(--ink);
+    font-family: "Times New Roman", Times, serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  @keyframes riseIn{
+    from{ opacity: 0; transform: translateY(10px); }
+    to{ opacity: 1; transform: translateY(0); }
+  }
+  .hero-anim{
+    animation: riseIn 0.9s ease-out both;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .hero-anim{ animation: none; }
+  }
+
+  .page{
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 80px 26px 100px;
+  }
+
+  header.hero{
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .ornament{
+    width: 46px;
+    height: 46px;
+    margin: 0 auto 18px;
+    color: var(--gold);
+  }
+
+  .wordmark{
+    font-size: clamp(2.6rem, 7vw, 3.7rem);
+    letter-spacing: 0.13em;
+    margin: 0;
+    font-weight: 400;
+  }
+  .wordmark .accent{
+    color: var(--gold-deep);
+    font-style: italic;
+  }
+
+  .tagline{
+    margin: 16px auto 0;
+    max-width: 46ch;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1.08rem;
+  }
+
+  .hairline{
+    width: 130px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 30px auto 0;
+  }
+
+  .intro{
+    text-align: center;
+    max-width: 58ch;
+    margin: 0 auto 44px;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+  }
+
+  /* Market switch */
+  .switch-wrap{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 68px;
+  }
+  .switch{
+    display: inline-flex;
+    border: 1px solid var(--gold);
+    padding: 4px;
+    gap: 4px;
+  }
+  .switch button{
+    font-family: inherit;
+    font-size: 0.92rem;
+    letter-spacing: 0.03em;
+    background: transparent;
+    border: none;
+    color: var(--ink-soft);
+    padding: 9px 20px;
+    cursor: pointer;
+    font-style: italic;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+  .switch button.active{
+    background: var(--gold);
+    color: var(--ivory);
+    font-style: normal;
+  }
+  .switch button:focus-visible{
+    outline: 2px solid var(--gold-deep);
+    outline-offset: 2px;
+  }
+
+  section.service{
+    margin-bottom: 72px;
+  }
+
+  .service-title{
+    font-size: 1.55rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin: 0 0 6px;
+    text-align: center;
+  }
+
+  .service-desc{
+    text-align: center;
+    color: var(--ink-soft);
+    max-width: 54ch;
+    margin: 0 auto 30px;
+    font-size: 0.98rem;
+  }
+
+  table.pricing{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 6px;
+  }
+
+  table.pricing th{
+    text-align: left;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--gold);
+    padding: 0 12px 10px 0;
+    font-size: 0.92rem;
+  }
+  table.pricing th:last-child{
+    text-align: right;
+    padding-right: 0;
+  }
+
+  table.pricing tr.row{
+    transition: background 0.3s ease;
+  }
+  table.pricing tr.row:hover{
+    background: var(--rose);
+  }
+
+  table.pricing td{
+    padding: 18px 12px 18px 4px;
+    border-bottom: 1px solid var(--rose-line);
+    vertical-align: top;
+  }
+  table.pricing td:first-child{ padding-left: 0; }
+  table.pricing td:last-child{
+    text-align: right;
+    padding-right: 4px;
+    white-space: nowrap;
+    font-size: 1.05rem;
+  }
+
+  .tier-name{
+    display: block;
+    font-size: 1.08rem;
+    margin-bottom: 4px;
+  }
+  .tier-desc{
+    display: block;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    max-width: 44ch;
+  }
+
+  .price{
+    color: var(--gold-deep);
+  }
+  .price-note{
+    display: block;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin-top: 2px;
+  }
+
+  .note{
+    background: var(--rose);
+    padding: 20px 24px;
+    margin-top: 26px;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+  .note strong{
+    color: var(--ink);
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  /* Payment plans */
+  .plans-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+  }
+  .plan{
+    padding: 26px 20px;
+    text-align: center;
+    border-left: 1px solid var(--rose-line);
+  }
+  .plan:first-child{ border-left: none; }
+  .plan h3{
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin: 0 0 10px;
+  }
+  .plan p{
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .methods{
+    text-align: center;
+    margin-top: 24px;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  @media (max-width: 620px){
+    .plans-grid{ grid-template-columns: 1fr; }
+    .plan{ border-left: none; border-top: 1px solid var(--rose-line); }
+    .plan:first-child{ border-top: none; }
+  }
+
+  /* Process */
+  .steps{
+    counter-reset: step;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .steps li{
+    counter-increment: step;
+    display: flex;
+    gap: 22px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rose-line);
+  }
+  .steps li:last-child{ border-bottom: none; }
+  .steps li::before{
+    content: counter(step);
+    flex: none;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: var(--gold-deep);
+    font-size: 0.95rem;
+  }
+  .step-body h3{
+    margin: 4px 0 6px;
+    font-weight: 400;
+    font-size: 1.08rem;
+  }
+  .step-body p{
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+
+  /* Reflection */
+  .reflection{
+    background: var(--ivory-deep);
+    padding: 52px 40px;
+    text-align: center;
+    margin-bottom: 76px;
+  }
+  .reflection p{
+    font-style: italic;
+    color: var(--ink);
+    max-width: 56ch;
+    margin: 0 auto 18px;
+    font-size: 1.08rem;
+    line-height: 1.75;
+  }
+  .reflection p:last-child{ margin-bottom: 0; }
+  .reflection .signature{
+    font-style: normal;
+    letter-spacing: 0.08em;
+    color: var(--gold-deep);
+    margin-top: 24px;
+    font-size: 0.95rem;
+  }
+
+  footer{
+    text-align: center;
+    margin-top: 0;
+    padding-top: 40px;
+    border-top: 1px solid var(--gold);
+  }
+
+  footer p{
+    color: var(--ink-soft);
+    max-width: 50ch;
+    margin: 0 auto 18px;
+  }
+
+  .contact{
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+  }
+
+  .fine-print{
+    margin-top: 50px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    text-align: center;
+    max-width: 58ch;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: italic;
+  }
+
+  [data-market]{ display: none; }
+  body.market-ve [data-market="ve"]{ display: inline; }
+  body.market-us [data-market="us"]{ display: inline; }
+  body.market-ve tr[data-market-row="ve"],
+  body.market-us tr[data-market-row="us"]{ display: table-row; }
+  tr[data-market-row]{ display: none; }
+
+  @media (max-width: 520px){
+    .page{ padding: 56px 18px 70px; }
+    table.pricing td:last-child{ white-space: normal; }
+  }
+</style>
+</head>
+<body class="market-us">
+<nav style="position: sticky; top: env(safe-area-inset-top, 0px); background: var(--ivory); border-bottom: 1px solid var(--rose-line); padding: 18px 26px; z-index: 40;">
+  <a href="index.html" style="font-size:0.9rem; color: var(--ink-soft); text-decoration:none;">← AnnDesign</a>
+</nav>
+<div class="page">
+
+  <header class="hero hero-anim">
+    <svg class="ornament" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M24 4 L24 44" stroke="currentColor" stroke-width="0.8"/>
+      <path d="M4 24 L44 24" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+      <circle cx="24" cy="24" r="9" stroke="currentColor" stroke-width="1"/>
+      <circle cx="24" cy="24" r="2" fill="currentColor"/>
+    </svg>
+    <h1 class="wordmark">Ann<span class="accent">Design</span></h1>
+    <p class="tagline">Automatización, presencia web e infraestructura digital, hechas con la atención de una pieza a medida.</p>
+    <div class="hairline"></div>
+  </header>
+
+  <p class="intro">Trabajamos con un número reducido de proyectos a la vez. Cada tarifa incluye acompañamiento directo, revisiones cuidadas y un resultado que no se nota hecho en serie.</p>
+  <p class="intro" style="margin-top: -30px; font-size: 0.9rem;">¿Escribes desde Venezuela o Latinoamérica? <a href="index.html#contacto" style="color: var(--gold-deep); border-bottom: 1px solid var(--gold);">Escríbeme</a> y conversamos sobre un precio ajustado a tu región.</p>
+
+  <div class="switch-wrap" style="margin-bottom: 68px;">
+    <div class="switch" role="group" aria-label="Modo de color">
+      <button type="button" id="btn-theme-light" class="active" onclick="setTheme('light')">Claro</button>
+      <button type="button" id="btn-theme-dark" onclick="setTheme('dark')">Oscuro</button>
+    </div>
+  </div>
+
+  <section class="service">
+    <h2 class="service-title">Automatización con IA</h2>
+    <p class="service-desc">Para WhatsApp e Instagram: atención, agenda y seguimiento de clientes que responde con naturalidad, incluso fuera de horario.</p>
+    <table class="pricing">
+      <tr>
+        <th>Nivel</th>
+        <th>Inversión</th>
+      </tr>
+      <tr class="row">
+        <td>
+          <span class="tier-name">Atención Esencial</span>
+          <span class="tier-desc">Flujo de respuestas y agenda para consultas frecuentes, con derivación a una persona cuando el caso lo requiere.</span>
+        </td>
+        <td>
+          <span class="price" data-market="ve">$180</span><span class="price" data-market="us">$320</span>
+          <span class="price-note"><span data-market="ve">+ $35/mes</span><span data-market="us">+ $60/mes</span></span>
+        </td>
+      </tr>
+      <tr class="row">
+        <td>
+          <span class="tier-name">Asistente con IA</span>
+          <span class="tier-desc">Conversación en lenguaje natural, calificación de clientes y agendamiento automático de citas o pedidos.</span>
+        </td>
+        <td>
+          <span class="price" data-market="ve">$360</span><span class="price" data-market="us">$650</span>
+          <span class="price-note"><span data-market="ve">+ $65/mes</span><span data-market="us">+ $120/mes</span></span>
+        </td>
+      </tr>
+      <tr class="row">
+        <td>
+          <span class="tier-name">Presencia Multicanal</span>
+          <span class="tier-desc">WhatsApp e Instagram integrados sobre un mismo panel, con historial de cada cliente y reportes mensuales.</span>
+        </td>
+        <td>
+          <span class="price" data-market="ve">$600</span><span class="price" data-market="us">$1.100</span>
+          <span class="price-note"><span data-market="ve">+ $100/mes</span><span data-market="us">+ $180/mes</span></span>
+        </td>
+      </tr>
+    </table>
+    <div class="note"><strong>Sobre el costo mensual:</strong> a partir de octubre de 2026, Meta empieza a cobrar por mensaje de servicio en WhatsApp Business. El mantenimiento mensual cubre esa tarifa dentro de un uso habitual; un volumen fuera de lo previsto se conversa aparte.</div>
+  </section>
+
+  <section class="service">
+    <h2 class="service-title">Landing Pages</h2>
+    <p class="service-desc">Una sola página, pensada para que quien la visite entienda en segundos qué ofreces y por qué escribirte a ti primero.</p>
+    <table class="pricing">
+      <tr>
+        <th>Nivel</th>
+        <th>Inversión</th>
+      </tr>
+      <tr class="row">
+        <td>
+          <span class="tier-name">Esencial</span>
+          <span class="tier-desc">Página de una sección con diseño propio, formulario de contacto y enlace directo a WhatsApp.</span>
+        </td>
+        <td>
+          <span class="price" data-market="ve">$150</span><span class="price" data-market="us">$280</span>
+        </td>
+      </tr>
+      <tr class="row">
+        <td>
+          <span class="tier-name">Signature</span>
+          <span class="tier-desc">Varias secciones, identidad visual desarrollada a partir de tu marca, y panel simple para editar textos e imágenes.</span>
+        </td>
+        <td>
+          <span class="price" data-market="ve">$300</span><span class="price" data-market="us">$550</span>
+        </td>
+      </tr>
+      <tr class="row">
+        <td>
+          <span class="tier-name">A la medida</span>
+          <span class="tier-desc">Sitio de varias páginas, con estructura propia y contenido pensado para tu tipo de cliente.</span>
+        </td>
+        <td>
+          <span class="price" data-market="ve">desde $500</span><span class="price" data-market="us">desde $950</span>
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="service">
+    <h2 class="service-title">Infraestructura Digital</h2>
+    <p class="service-desc">El sistema detrás de la fachada: gestión de clientes o casos, pagos, y datos organizados con criterio.</p>
+    <table class="pricing">
+      <tr>
+        <th>Nivel</th>
+        <th>Inversión</th>
+      </tr>
+      <tr class="row">
+        <td>
+          <span class="tier-name">Base</span>
+          <span class="tier-desc">Sistema de gestión con un panel de administración, pensado para un solo usuario del negocio.</span>
+        </td>
+        <td>
+          <span class="price" data-market="ve">$650</span><span class="price" data-market="us">$1.200</span>
+          <span class="price-note"><span data-market="ve">+ $50/mes</span><span data-market="us">+ $90/mes</span></span>
+        </td>
+      </tr>
+      <tr class="row">
+        <td>
+          <span class="tier-name">Operativa</span>
+          <span class="tier-desc">Múltiples usuarios con roles distintos, cobros integrados y respaldo automático de la información.</span>
+        </td>
+        <td>
+          <span class="price" data-market="ve">$1.300</span><span class="price" data-market="us">$2.400</span>
+          <span class="price-note"><span data-market="ve">+ $85/mes</span><span data-market="us">+ $150/mes</span></span>
+        </td>
+      </tr>
+      <tr class="row">
+        <td>
+          <span class="tier-name">Plataforma</span>
+          <span class="tier-desc">Sistema pensado para varios negocios o sucursales sobre una misma base, con reportes e integraciones propias.</span>
+        </td>
+        <td>
+          <span class="price" data-market="ve">desde $2.200</span><span class="price" data-market="us">desde $4.200</span>
+          <span class="price-note"><span data-market="ve">+ $140/mes</span><span data-market="us">+ $250/mes</span></span>
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="service">
+    <h2 class="service-title">Planes de pago</h2>
+    <p class="service-desc">Ningún proyecto se paga todo por adelantado. Así se organiza según su tamaño.</p>
+    <div class="plans-grid">
+      <div class="plan">
+        <h3>Landing Pages</h3>
+        <p>50% para iniciar el diseño, 50% contra entrega y aprobación final.</p>
+      </div>
+      <div class="plan">
+        <h3>Automatización</h3>
+        <p>60% de anticipo, 40% al activar el sistema. La mensualidad inicia desde el primer mes de uso real.</p>
+      </div>
+      <div class="plan">
+        <h3>Infraestructura</h3>
+        <p>40% para iniciar, 30% al ver la primera versión funcional, 30% en la entrega. Proyectos desde <span data-market="ve">$1.300</span><span data-market="us">$2.000</span> pueden fraccionarse en hasta 3 cuotas mensuales sin recargo.</p>
+      </div>
+    </div>
+    <p class="methods">
+      <span data-market="ve">Aceptamos pago en dólares en efectivo, Zelle, Binance/USDT y transferencia en bolívares al cambio del día.</span>
+      <span data-market="us">Aceptamos Zelle, PayPal, transferencia bancaria y tarjeta.</span>
+    </p>
+  </section>
+
+  <section class="service">
+    <h2 class="service-title">Cómo funciona nuestro sistema</h2>
+    <p class="service-desc">Cinco pasos, sin sorpresas en el camino.</p>
+    <ol class="steps">
+      <li>
+        <div class="step-body">
+          <h3>Conversación de descubrimiento</h3>
+          <p>Una llamada breve, sin costo, para entender tu negocio real: a quién le vendes, qué te quita tiempo hoy y qué resultado esperas.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <h3>Propuesta a medida</h3>
+          <p>Recibes alcance, tiempos y precio por escrito, sin letra pequeña. Nada empieza hasta que estés de acuerdo con lo que vas a recibir.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <h3>Diseño y desarrollo</h3>
+          <p>Trabajamos por etapas visibles, con revisiones incluidas en cada una. Ves avances reales, no promesas.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <h3>Entrega y capacitación</h3>
+          <p>Te mostramos cómo usar lo que construimos, paso a paso, hasta que te sientas cómodo manejándolo sin depender de nosotros para lo básico.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <h3>Acompañamiento continuo</h3>
+          <p>El mantenimiento mensual no es solo soporte técnico: es seguir ajustando el sistema conforme tu negocio cambia y crece.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="reflection">
+    <p>Lo que imaginas casi nunca llega completo la primera vez que lo cuentas. Llega en fragmentos: una frase sobre cómo te gustaría que se sintiera, una queja sobre lo que hoy no funciona, una imagen mental de tu negocio funcionando sin fricción.</p>
+    <p>Nuestro trabajo es escuchar esos fragmentos con la misma atención que le daríamos a un plano ya terminado, y devolverte algo construido específicamente para lo que tú necesitas, no para lo que le funcionó a otro cliente. Por eso preguntamos antes de proponer, y por eso cada tarifa de esta página es un punto de partida, no un molde cerrado.</p>
+    <p class="signature">AnnDesign</p>
+  </section>
+
+  <footer>
+    <p>Cada proyecto empieza con una conversación breve para entender qué necesitas de verdad, antes de hablar de números definitivos.</p>
+    <p class="contact">AnnDesign</p>
+  </footer>
+
+  <p class="fine-print">Tarifas de referencia. Pueden ajustarse según el alcance final de cada proyecto y conversarse en la moneda que prefieras.</p>
+
+</div>
+
+<script>
+  function setTheme(mode){
+    document.documentElement.setAttribute('data-theme', mode);
+    document.getElementById('btn-theme-light').classList.toggle('active', mode === 'light');
+    document.getElementById('btn-theme-dark').classList.toggle('active', mode === 'dark');
+    try{ localStorage.setItem('anndesign-theme', mode); }catch(e){}
+  }
+  (function(){
+    try{
+      var savedTheme = localStorage.getItem('anndesign-theme');
+      if(savedTheme === 'dark'){ setTheme('dark'); }
+    }catch(e){}
+  })();
+</script>
+
+</body>
+</html>
