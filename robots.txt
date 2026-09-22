@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://annabellapaoli.github.io/LandingPage-AnnDesign/sitemap.xml
