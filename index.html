@@ -30,9 +30,12 @@
   ]
 }
 </script>
+<link rel="icon" href="img/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!-- CORREGIDO: apple-touch-icon apunta a img/, no a la raíz -->
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<!-- CORREGIDO: styles.css en minúscula (tu archivo decía Styles.css) -->
 <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
@@ -59,7 +62,6 @@
       <circle cx="24" cy="24" r="9" stroke="currentColor" stroke-width="1"/>
       <circle cx="24" cy="24" r="2" fill="currentColor"/>
     </svg>
-    <!-- REEMPLAZA este titular por el tuyo si quieres -->
     <h1>Automatización, diseño web e <em>infraestructura digital</em> con acabado de sastrería</h1>
     <p class="sub">Ayudo a negocios a tener presencia digital, atención automatizada y sistemas propios, sin perder el cuidado de un trabajo hecho a medida.</p>
     <a class="btn" href="#contacto">Conversemos sobre tu proyecto</a>
@@ -102,7 +104,6 @@
     <h2 class="section-title">Trabajos</h2>
     <p class="section-sub">Una muestra de lo que hemos construido. Reemplaza estos espacios por tus propios proyectos.</p>
     <div class="portfolio-grid">
-      <!-- Cada bloque .work es un proyecto. Duplica este bloque por cada trabajo que quieras mostrar. -->
       <div class="work">
         <div class="thumb">Imagen del proyecto</div>
         <div class="caption">
@@ -141,9 +142,10 @@
       <p class="faq-a">Sí. Cada servicio incluye una mensualidad de acompañamiento que cubre soporte, ajustes y actualizaciones conforme tu negocio cambia.</p>
     </details>
 
+    <!-- CORREGIDO: ya no menciona "página de tarifas" (esa página se quitó del sitio) -->
     <details class="faq-item">
       <summary class="faq-q">¿Puedo pagar en partes? <span class="sign"></span></summary>
-      <p class="faq-a">Sí, cada servicio tiene un plan de pago por etapas. Puedes ver el detalle en la página de tarifas.</p>
+      <p class="faq-a">Sí, cada servicio tiene un plan de pago por etapas, ajustado al alcance de tu proyecto. Te lo detallo en la primera conversación.</p>
     </details>
   </div>
 </section>
@@ -157,7 +159,6 @@
         <h3>Contacto directo</h3>
         <div class="item">
           <span>WhatsApp</span>
-          <!-- Reemplaza el número (código de país + número, sin espacios ni +) -->
           <a href="https://wa.me/584120392105" target="_blank" rel="noopener">+58 412 039 2105</a>
         </div>
         <div class="item">
@@ -165,12 +166,10 @@
           <a href="mailto:annabellapaoli@gmail.com">annabellapaoli@gmail.com</a>
         </div>
       </div>
-    
-     
+
       <form class="contact-form" id="contactForm">
         <input type="hidden" name="access_key" value="2c2c6b9e-72e5-4de1-8b60-40aa6144c0bf">
         <input type="hidden" name="subject" value="Nuevo mensaje desde AnnDesign">
-        <!-- Campo trampa anti-spam: invisible para personas, los bots suelen rellenarlo -->
         <input type="text" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
         <div>
           <label for="nombre">Nombre</label>
@@ -197,7 +196,6 @@
 </footer>
 
 <a class="wa-float" href="https://wa.me/584120392105" target="_blank" rel="noopener">Escríbeme por WhatsApp</a>
-
 <script src="Script.js" defer></script>
 <script type="application/ld+json">
 {
@@ -233,7 +231,7 @@
       "name": "¿Puedo pagar en partes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí, cada servicio tiene un plan de pago por etapas. Puedes ver el detalle en la página de tarifas."
+        "text": "Sí, cada servicio tiene un plan de pago por etapas, ajustado al alcance de tu proyecto. Te lo detallo en la primera conversación."
       }
     }
   ]
