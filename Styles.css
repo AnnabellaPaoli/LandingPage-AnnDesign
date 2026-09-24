@@ -169,6 +169,7 @@
   .service-card:first-child{ border-left: none; }
   .service-card h3{ font-weight: 400; font-size: 1.15rem; margin: 0 0 12px; }
   .service-card p{ color: var(--ink-soft); font-size: 0.92rem; margin: 0 0 18px; }
+  .service-card .price-from{ color: var(--gold-deep); font-style: italic; font-size: 0.95rem; margin: 0 0 14px; }
   .service-card a{ font-size: 0.88rem; font-style: italic; color: var(--gold-deep); text-decoration: none; }
   .service-card a:hover{ text-decoration: underline; }
   @media (max-width: 640px){
@@ -198,7 +199,7 @@
     /* REEMPLAZA este bloque por: background-image: url('tu-imagen.jpg'); background-size: cover; background-position: center; */
   }
   .work .caption{ padding: 16px 18px; }
-  .work .caption h4{ margin: 0 0 4px; font-weight: 400; font-size: 1.02rem; }
+  .work .caption h3{ margin: 0 0 4px; font-weight: 400; font-size: 1.02rem; }
   .work .caption p{ margin: 0; color: var(--ink-soft); font-size: 0.88rem; }
   @media (max-width: 640px){ .portfolio-grid{ grid-template-columns: 1fr; } }
 
@@ -267,7 +268,8 @@
     right: 20px;
     bottom: calc(20px + env(safe-area-inset-bottom, 0px));
     background: var(--gold);
-    color: var(--ivory);
+    color: var(--ink);
+    font-weight: 600;
     text-decoration: none;
     padding: 14px 22px;
     font-size: 0.92rem;
@@ -275,7 +277,7 @@
     box-shadow: 0 4px 14px rgba(0,0,0,0.18);
     z-index: 50;
   }
-  .wa-float:hover{ background: var(--gold-deep); }
+  .wa-float:hover{ background: var(--gold-bright); }
   @media (max-width: 560px){
     .wa-float{ padding: 12px 18px; font-size: 0.85rem; }
   }
